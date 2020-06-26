@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DashboardFaturamento.master.cs" Inherits="CalculaStV1.DashboardFaturamento" %>
+
+<!DOCTYPE html>
+
+<html>
+    <head runat="server">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>
+            <asp:ContentPlaceHolder ID="TituloPagina" runat="server"></asp:ContentPlaceHolder>
+        </title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Css Compartilhados -->
+        <asp:PlaceHolder runat="server">
+            <%: Styles.Render("~/bundles/masterpageCSS") %>
+        </asp:PlaceHolder>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+        <asp:ContentPlaceHolder ID="CssExclusivos" runat="server"></asp:ContentPlaceHolder>
+    </head>
+    <body>
+       <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1"
+                EnablePageMethods="true"
+                EnablePartialRendering="true" runat="server" />
+          <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <header class="header tema">
+                <div class="divHeaderInterna">
+                    <asp:Label ID="LabelTituloHeader" runat="server" Text="Titulo Header"></asp:Label>
+                </div>
+                <div class="cartaoUsuario" id="cartaoUsuario">
+                    <div class="divImagemUsuario">
+                        <asp:Image ID="imagemUsuario" class="imagemUsuario" runat="server" ImageUrl="" Height="40px" Width="40px" />
+                    </div>
+                    <div class="diviInfosUsuario">
+                        <asp:Label ID="LabelUsuario" runat="server" Text="Label" data-toggle="tooltip" data-original-title="Usuário"></asp:Label>
+                        <asp:Label ID="LabelTipo" runat="server" Text="Label" data-toggle="tooltip" data-original-title="Tipo de Usuário"></asp:Label>
+                    </div>
+                </div>
+            </header>
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <footer class="footer"><a href="http://bruno.sajermann.com" target="_blank">Desenvolvido por Bruno Sájermann Copyright © 2019.</a></footer>
+           <script href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+            <asp:PlaceHolder runat="server">
+                <%: Scripts.Render("~/bundles/masterpageJS") %>
+            </asp:PlaceHolder>
+            <asp:ContentPlaceHolder ID="ScriptExclusivo" runat="server"></asp:ContentPlaceHolder>
+        </form>
+    </body>
+</html>
