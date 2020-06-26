@@ -227,6 +227,7 @@
     <Content Include="Css\Public\bootstrap.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\MasterPage\bootstrap.bundle.min.js.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
